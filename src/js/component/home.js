@@ -1,24 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+// LOS COMPONENETES SON FUNCIONES QUE RECIBEN COMO PARAMETROS LAS PROPIEDADES props (QUE VIENEN DEL main/index.js)
+// ESTOS COMPONENTES CONTIENEN EL CONTENIDO DEL html
+export function Home(props) {
+	const [counter, setCounter] = useState(0);
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+	useEffect(() => {
+		counter + 1;
+	});
 
-//create your first component
-export function Home() {
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<main className="page">
+			<h1 onClick={() => setCounter(counter + 1)}>Contador: {counter}</h1>
+		</main>
 	);
 }

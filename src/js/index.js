@@ -12,4 +12,8 @@ import "../styles/index.scss";
 import { Home } from "./component/home.js";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let texto = "A ver que ocurre";
+
+const container = document.querySelector("#app"); // UBICACION DONDE SE VA A RENDERIZAR
+const component = <Home />; // ARCHIVO QUE SE VA A RENDERIZAR
+ReactDOM.render(component, container);
